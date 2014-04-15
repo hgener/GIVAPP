@@ -16,8 +16,8 @@ window.addEventListener('load', function () {
 }, false);
 
 function deviceReady() {
-    //hgs afegit per treure el splash
-    navigator.splashscreen.hide();
+
+
 
     if (phoneGapRun()) {
         pictureSource = navigator.camera.PictureSourceType;
@@ -43,7 +43,7 @@ function deviceReady() {
             }
             catch(e){ mensaje('exception carregant llista de carrers : ' + e.message,'error'); }
         }
-
+    navigator.splashscreen.hide();
 
 
 }

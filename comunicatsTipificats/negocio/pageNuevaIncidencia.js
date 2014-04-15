@@ -238,7 +238,6 @@ function iniciaMapaAlta(bAbrir) {
             panControl: false,
             rotateControl: false,
             scaleControl: false,
-            scrollwheel: false,
             zoomControl: false,
             streetViewControl: false
         };
@@ -246,8 +245,7 @@ function iniciaMapaAlta(bAbrir) {
 
         // Try HTML5 geolocation
         if (navigator.geolocation) {
-            navigator.geolocation.getCurrentPosition(function (position) {upload
-
+            navigator.geolocation.getCurrentPosition(function (position) {
                 crearMarcadorEventoClick('ALTA', mapAlta, true,'labelDireccion', true);
                 posAlta = new google.maps.LatLng(position.coords.latitude, position.coords.longitude);
                 mapAlta.setCenter(posAlta);  /*HGS 141013. Abans estava sobre el refresh*/
@@ -294,7 +292,6 @@ function iniciaMapaFoto(bAbrir) {
             panControl: false,
             rotateControl: false,
             scaleControl: false,
-            scrollwheel: false,
             zoomControl: false,
             streetViewControl: false
         };

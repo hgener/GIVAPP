@@ -111,6 +111,14 @@
     <icon src="icons/android/hdpi.png" gap:platform="android" gap:density="hdpi" />
     <icon src="icons/android/xhdpi.png" gap:platform="android" gap:density="xhdpi" />
 
+    <gap:splash src="splash.png" />
+    <gap:splash src="icons/ios/Default-Landscape~ipad.png" width="1024" height="768" />
+    <gap:splash src="icons/ios/Default-Portrait~ipad.png" width="768" height="1024" />
+    <gap:splash src="icons/android/splash-ldpi.png" gap:platform="android" gap:density="ldpi" />
+    <gap:splash src="icons/android/splash-mdpi.png" gap:platform="android" gap:density="mdpi" />
+    <gap:splash src="icons/android/splash-hdpi.png" gap:platform="android" gap:density="hdpi" />
+    <gap:splash src="icons/android/splash-xdpi.png" gap:platform="android" gap:density="xhdpi" />
+
  <!-- Define app splash screen for each platform. -->
   <!--<gap:splash src="res/screen/android/screen-ldpi-portrait.png"  gap:platform="android" gap:density="ldpi" />
   <gap:splash src="res/screen/android/screen-mdpi-portrait.png"  gap:platform="android" gap:density="mdpi" />
