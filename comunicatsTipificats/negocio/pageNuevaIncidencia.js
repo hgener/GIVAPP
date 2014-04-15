@@ -233,7 +233,7 @@ function iniciaMapaAlta(bAbrir) {
         var mapOptions = {
             zoom: 14,
             mapTypeId: google.maps.MapTypeId.ROADMAP,
-            accuracy: 100,
+            accuracy: 1,
             enabledHighAccuracy:true,
             panControl: false,
             rotateControl: false,
@@ -288,7 +288,7 @@ function iniciaMapaFoto(bAbrir) {
         var mapOptions = {
             zoom: 14,
             mapTypeId: google.maps.MapTypeId.ROADMAP,
-            accuracy:100,
+            accuracy:1,
             enabledHighAccuracy:true,
             overviewMapControl: false,
             panControl: false,
