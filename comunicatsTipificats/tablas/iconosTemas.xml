@@ -1,0 +1,28 @@
+<?xml version="1.0"?>
+<icoTemas>
+<icoTema>
+    <id>1</id>
+    <img>1333_off.png</img>
+    <desc>Recollida i neteja</desc>
+</icoTema>
+<icoTema>
+    <id>2</id>
+    <img>1349_off.png</img>
+    <desc>Via pública</desc>
+</icoTema>
+<icoTema>
+    <id>3</id>
+    <img>1460_off.png</img>
+    <desc>Parcs i jardins</desc>
+</icoTema>
+<icoTema>
+    <id>4</id>
+    <img>1503_off.png</img>
+    <desc>Transports i mobilitat</desc>
+</icoTema>
+<icoTema>
+    <id>5</id>
+    <img>1058_off.png</img>
+    <desc>Edificis municipals</desc>
+</icoTema>
+</icoTemas>
