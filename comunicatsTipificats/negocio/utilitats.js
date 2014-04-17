@@ -78,8 +78,7 @@ function nuevoMarcadorSobrePlanoClickInfoWindow(sMODO, mapa, pos,htmlText, nIcon
             var marcador = new google.maps.Marker({
                 position: pos,
                 icon: sIcono,
-                map: mapa,
-                center:pos //hgs afegit 170414
+                map: mapa
             });
             globalMarcadorMapa = marcador;
 
