@@ -78,7 +78,8 @@ function nuevoMarcadorSobrePlanoClickInfoWindow(sMODO, mapa, pos,htmlText, nIcon
             var marcador = new google.maps.Marker({
                 position: pos,
                 icon: sIcono,
-                map: mapa
+                map: mapa,
+                center:pos //hgs afegit 170414
             });
             globalMarcadorMapa = marcador;
 
@@ -143,9 +144,6 @@ function crearMarcadorEventoClick(sMODO, map, bSoloUnMarcadorSobreMapa , labelMo
                 {
                     bDirEsLatLon = false;
                 }
-
-        /*        if(sMODO == 'ALTA' && indefinidoOnullToVacio(labelMostrarDir) != '')  $('#' + labelMostrarDir).text(sDir);
-                  if(sMODO == 'ALTA')      sDireccionAlta = sDir;*/
 
                 var sTxt = '<div><table><tr><td style="font-size:x-small; font-weight:bold;">detectat en </td></tr><tr><td style="font-size:x-small; font-weight:normal;">' + sDireccionAlta + '</td></tr></table></div>';
                 //alert('crearMarcadorEventoClick');

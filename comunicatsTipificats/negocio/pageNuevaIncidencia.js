@@ -233,13 +233,14 @@ function iniciaMapaAlta(bAbrir) {
         var mapOptions = {
             zoom: 14,
             mapTypeId: google.maps.MapTypeId.ROADMAP,
-            accuracy: 1,
-            //enabledHighAccuracy:true,
+            accuracy: 10,
+            enabledHighAccuracy:true,
             panControl: false,
             rotateControl: false,
             scaleControl: false,
             zoomControl: false,
             streetViewControl: false
+            ,maximumAge:0//,timeout:1000
         };
         mapAlta = new google.maps.Map(document.getElementById('divMapaAlta'), mapOptions);
 
@@ -248,7 +249,7 @@ function iniciaMapaAlta(bAbrir) {
             navigator.geolocation.getCurrentPosition(function (position) {
                 crearMarcadorEventoClick('ALTA', mapAlta, true,'labelDireccion', true);
                 posAlta = new google.maps.LatLng(position.coords.latitude, position.coords.longitude);
-                mapAlta.setCenter(posAlta);  /*HGS 141013. Abans estava sobre el refresh*/
+                mapAlta.setCenter(posAlta);
                 //alert('iniciaMapaAlta. sDireccionAlta: ' + sDireccionAlta);
                 sDireccionAlta = cogerDireccion(posAlta, true);
                 $('#labelDireccion').text(sDireccionAlta); /*HGS 101213*/
@@ -264,28 +265,7 @@ function iniciaMapaAlta(bAbrir) {
                 ('#divMapaAlta').hide();
                 $('#divMensajeMapa').show();
                 getCurrentPositionError(true);
-
-                /*error
-                switch(error.code)
-                {
-                    case error.PERMISSION_DENIED:
-                        alert('ERROR: User denied access to track physical position!');
-                        break;
-
-                    case error.POSITION_UNAVAILABLE:
-                        alert("ERROR: There is a problem getting the position of the device!");
-                        break;
-
-                    case error.TIMEOUT:
-                        alert("ERROR: The application timed out trying to get the position of the device!");
-                        break;
-
-                    default:
-                        alert("ERROR: Unknown problem!");
-                        break;
-                }*/
-
-            }, {enabledHighAccuracy:true,maximumAge:5000,timeout:1000});
+            });
         } else {
             // Browser no soporta Geolocation
             $('#divMapaAlta').hide();
@@ -307,14 +287,15 @@ function iniciaMapaFoto(bAbrir) {
         var mapOptions = {
             zoom: 14,
             mapTypeId: google.maps.MapTypeId.ROADMAP,
-            accuracy:1,
-            //enabledHighAccuracy:true,
+            accuracy:10,
+            enabledHighAccuracy:true,
             overviewMapControl: false,
             panControl: false,
             rotateControl: false,
             scaleControl: false,
             zoomControl: false,
             streetViewControl: false
+            ,maximumAge:0//,timeout:1000
         };
         mapAlta = new google.maps.Map(document.getElementById('divMapaAlta'), mapOptions);
 
@@ -333,7 +314,7 @@ function iniciaMapaFoto(bAbrir) {
                 ('#divMapaAlta').hide();
                 $('#divMensajeMapa').show();
                 getCurrentPositionError(true);
-            },{enabledHighAccuracy:true,maximumAge:5000,timeout:1000});
+            });
         } else {
             // Browser no soporta Geolocation
             $('#divMapaAlta').hide();
