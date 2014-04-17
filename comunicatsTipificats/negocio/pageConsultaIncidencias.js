@@ -123,7 +123,7 @@ function estadoDelPlano(){
     //$("#buttonMostrarEnPlano").button("refresh");
 }
 
-function mostrarEnPlano() {
+function mostrarEnPlanoOriginal() {
 // Descapar para pruebas en PC :
 //    var llamaWS = "http://213.27.242.251:8000/wsIncidentNotifier/wsIncidentNotifier.asmx/ConsultarIncidenciasZona";
 //    var sParam  = "sLat=41.3965&sLon=2.1521";
@@ -155,6 +155,104 @@ function mostrarEnPlano() {
     if (navigator.geolocation) {
         navigator.geolocation.getCurrentPosition(function (position) {
             var paramPosInicial = new google.maps.LatLng(position.coords.latitude, position.coords.longitude );
+
+            /* //Prueba llamada al WS ...
+             var llamaWS = "http://213.27.242.251:8000/wsIncidentNotifier/wsIncidentNotifier.asmx/ConsultarIncidenciasZona";
+             var sParam  = "sLat=" + position.coords.latitude;
+             sParam += "&sLon=" +  position.coords.longitude;
+             try
+             { //(sTipoLlamada,sUrl,   sParametros,sContentType,                       bCrossDom, sDataType, bProcData, bCache, nTimeOut, funcion,                          pasaParam,      asincro, bProcesar,tag)
+             var datos = LlamaWebService('GET',       llamaWS,sParam,     'application/x-www-form-urlencoded',true,      'xml',     false,     false,  10000,    resultadoConsultarIncidenciasZona,paramPosInicial,false,   true,     'pos');
+             }
+             catch (e)
+             {   mensaje('ERROR (exception) en iniciaMapaConsulta : \n' + e.code + '\n' + e.message); }
+             */
+
+            var pos = null;
+            var dir = '';
+            var sTipoVia = '';
+            var sCalle = '';
+            var sDatos = '';
+            var separador = '#';
+            for (var x = 0; x < aComs.length; x++) {
+                try
+                {
+                    pos = new google.maps.LatLng(aComs[x].COORD_X, aComs[x].COORD_Y);
+
+                    //centrar el mapa en el comunicado más reciente.
+                    if(x==0) paramPosInicial = pos;
+
+                    try
+                    { dir = aComs[x].CARRER + ', ' + aComs[x].NUM;  }
+                    catch(e) { dir = aComs[x].COORD_X + ' , ' +  aComs[x].COORD_Y; }
+
+                    sDatos = getCadenaComunicat(aComs[x] , separador);
+
+                    /*                  var sTxt =  '<div><table>';
+                     sTxt += '<tr><td style="font-size:xx-small;"><b>comunicat </b>' + aComs[x].REFERENCIA + '</td></tr>';
+                     sTxt += '<tr><td style="font-size:xx-small;"><b>reportat el </b>' + aComs[x].DATA +'</td></tr>';
+                     sTxt += '<tr><td style="font-size:xx-small;"><b>en </b>' + dir + '</td></tr>';
+                     sTxt += '<tr><td style="font-size:xx-small;"><a href="" onclick="verDatosComunicat(\'' + sDatos + '\',\'' + separador + '\');">+info</a></td></tr></table></div>'; */
+                    //sDatos = sDatos.replace("'","''","g");
+
+                    sDatos = sDatos.replace(/'/g, "´");
+
+                    //HGS 05/12/13 COMENTO ORIGINAL I MODIFICO PER QUE VOLEM QUE MOSTRI LA INFO DIRECTAMENT, NO EN EL BOCADILLO
+                    /*var sTxt =  '<div><table>';
+                     sTxt += '<tr><td style="font-size:xx-small;"><a href="" onclick="verDatosComunicat(\'' + sDatos + '\',\'' + separador + '\');">info</a></td></tr></table></div>';*/
+
+                    var sTxt =  sDatos;
+                    //alert('pageConsultaIncidencies');
+                    nuevoMarcadorSobrePlanoClickInfoWindow('CONSULTA', mapConsulta, pos, sTxt, aComs[x].ID, 300, false, false,'',false);
+                    aMarcadoresSobrePlano[x] = globalMarcadorMapa;
+
+                } catch(ex){}
+            }
+            mapConsulta.setCenter(paramPosInicial);
+            $('#divMapaConsulta').gmap('refresh');
+
+        } , function () { getCurrentPositionError(true); },{enabledHighAccuracy:true});
+    }
+    else
+    {
+        // Browser no soporta Geolocation
+        getCurrentPositionError(false);
+    }
+    return true;
+}
+
+function mostrarEnPlano() {
+// Descapar para pruebas en PC :
+//    var llamaWS = "http://213.27.242.251:8000/wsIncidentNotifier/wsIncidentNotifier.asmx/ConsultarIncidenciasZona";
+//    var sParam  = "sLat=41.3965&sLon=2.1521";
+    var aComs = new Array();
+    aComs = getComunicats();
+
+    if(aComs == null || aComs.length < 1) {
+        return false;
+    }
+
+    aMarcadoresSobrePlano = new Array();
+
+
+    // Try HTML5 geolocation
+    if (navigator.geolocation) {
+        navigator.geolocation.getCurrentPosition(function (position) {
+            var paramPosInicial = new google.maps.LatLng(position.coords.latitude, position.coords.longitude );
+
+            //hgs afegit el enabledhighaccuracy i el center
+            var mapOptions = {
+                zoom: 13,
+                mapTypeId: google.maps.MapTypeId.ROADMAP,
+                enabledHighAccuracy:true,
+                panControl: false,
+                rotateControl: false,
+                scaleControl: false,
+                zoomControl: false,
+                streetViewControl: false,
+                center:paramPosInicial
+            };
+            mapConsulta = new google.maps.Map(document.getElementById('divMapaConsulta'), mapOptions);
 
             /* //Prueba llamada al WS ...
                 var llamaWS = "http://213.27.242.251:8000/wsIncidentNotifier/wsIncidentNotifier.asmx/ConsultarIncidenciasZona";
