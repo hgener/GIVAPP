@@ -224,7 +224,7 @@ function prueba(){
 }
 
 // -------- LOCALIZACIÓN -----------------------------------------------------------------------
-function iniciaMapaAlta(bAbrir) {
+function iniciaMapaAltaOriginal(bAbrir) {
     //que no vuelva a coger la dirección actual si hay ya una en esta variable
     //(para que al igual que el resto de datos se conserve esta dirección en el form)
     if(sDireccionAlta.trim() != '') return;
@@ -281,8 +281,7 @@ function iniciaMapaAlta(bAbrir) {
         $('#divMensajeMapa').show();
     }
 }
-
-function iniciaMapaFoto(bAbrir) {
+function iniciaMapaFotoOriginal(bAbrir) {
     try{
         var mapOptions = {
             zoom: 14,
@@ -305,6 +304,118 @@ function iniciaMapaFoto(bAbrir) {
                 crearMarcadorEventoClick('ALTA', mapAlta, true,'labelDireccion', true);
                 posAlta = new google.maps.LatLng(position.coords.latitude, position.coords.longitude);
                 mapAlta.setCenter(posAlta);
+                sDireccionAlta = cogerDireccion(posAlta, true);
+                $('#labelDireccion').text(sDireccionAlta);
+                $('#divMensajeMapa').hide();
+                $('#divMapaAlta').gmap('refresh');
+
+            }, function () {
+                ('#divMapaAlta').hide();
+                $('#divMensajeMapa').show();
+                getCurrentPositionError(true);
+            });
+        } else {
+            // Browser no soporta Geolocation
+            $('#divMapaAlta').hide();
+            $('#divMensajeMapa').show();
+            getCurrentPositionError(false);
+        }
+    }
+    catch(e)
+    {
+        $('#divMapaAlta').hide();
+        $('#divMensajeMapa').show();
+    }
+}
+
+function iniciaMapaAlta(bAbrir) {
+    //que no vuelva a coger la dirección actual si hay ya una en esta variable
+    //(para que al igual que el resto de datos se conserve esta dirección en el form)
+    if(sDireccionAlta.trim() != '') return;
+
+    try{
+        // Try HTML5 geolocation
+        if (navigator.geolocation) {
+            navigator.geolocation.getCurrentPosition(function (position) {
+                posAlta = new google.maps.LatLng(position.coords.latitude, position.coords.longitude);
+                var mapOptions = {
+                    zoom: 14,
+                    mapTypeId: google.maps.MapTypeId.ROADMAP,
+                    accuracy: 1,
+                    center:posAlta, //afegit 170414
+                    enabledHighAccuracy:true,
+                    panControl: false,
+                    rotateControl: false,
+                    scaleControl: false,
+                    zoomControl: false,
+                    streetViewControl: false
+                    //,maximumAge:0//,timeout:1000
+                };
+                mapAlta = new google.maps.Map(document.getElementById('divMapaAlta'), mapOptions);
+                crearMarcadorEventoClick('ALTA', mapAlta, true,'labelDireccion', true);
+                //hgs comentat pq esta en el mapoptions
+                //mapAlta.setCenter(posAlta);
+
+                sDireccionAlta = cogerDireccion(posAlta, true);
+                $('#labelDireccion').text(sDireccionAlta); /*HGS 101213*/
+                $('#divMensajeMapa').hide();
+                /*            var sTxt = '<div><table><tr><td style="font-size:x-small; font-weight:bold;">comunicat en </td></tr><tr><td style="font-size:x-small; font-weight:normal;">' + sDireccionAlta + '</td></tr></table></div>';
+                 nuevoMarcadorSobrePlanoClickInfoWindow('ALTA', mapAlta, posAlta,sTxt,null,300,true,true);
+                 $('#labelDireccion').text(sDireccionAlta);
+                 $('#divMapaAlta').gmap('refresh');*/
+
+                $('#divMapaAlta').gmap('refresh');
+                //$(".gm-style-cc").hide();
+            }, function () {
+                ('#divMapaAlta').hide();
+                $('#divMensajeMapa').show();
+                getCurrentPositionError(true);
+            });
+        } else {
+            // Browser no soporta Geolocation
+            $('#divMapaAlta').hide();
+            $('#divMensajeMapa').show();
+            getCurrentPositionError(false);
+        }
+
+
+    }
+    catch(e)
+    {
+        $('#divMapaAlta').hide();
+        $('#divMensajeMapa').show();
+    }
+}
+
+
+function iniciaMapaFoto(bAbrir) {
+    try{
+
+
+        // Try HTML5 geolocation
+        if (navigator.geolocation) {
+            navigator.geolocation.getCurrentPosition(function (position) {
+
+                posAlta = new google.maps.LatLng(position.coords.latitude, position.coords.longitude);
+                var mapOptions = {
+                    zoom: 14,
+                    mapTypeId: google.maps.MapTypeId.ROADMAP,
+                    //accuracy:10,
+                    enabledHighAccuracy:true,
+                    overviewMapControl: false,
+                    panControl: false,
+                    rotateControl: false,
+                    scaleControl: false,
+                    zoomControl: false,
+                    streetViewControl: false,
+                     center:posAlta
+                    ,maximumAge:0//,timeout:1000
+                };
+                mapAlta = new google.maps.Map(document.getElementById('divMapaAlta'), mapOptions);
+
+                crearMarcadorEventoClick('ALTA', mapAlta, true,'labelDireccion', true);
+
+                //mapAlta.setCenter(posAlta);
                 sDireccionAlta = cogerDireccion(posAlta, true);
                 $('#labelDireccion').text(sDireccionAlta);
                 $('#divMensajeMapa').hide();
