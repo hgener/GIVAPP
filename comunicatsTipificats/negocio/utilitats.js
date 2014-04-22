@@ -256,8 +256,9 @@ function crearMarcadorDesdeCalleNum(){
     {
         sTipoVia = "";
         sCalle = sCalleGoogle;
-        if (TipusCarrer(sCodCalle) != 'PL')
-        { num = $('#inputNUM').val().trim(); }
+        //if (TipusCarrer(sCodCalle) != 'PL')
+        //{
+            num = $('#inputNUM').val().trim(); //}
         /*else
         {num='1';}*/
     }
@@ -316,14 +317,17 @@ function showAddress(sMODO,map, sTipoVia,sCalle,num,ciudad,region,pais) {
     var geocoder = new google.maps.Geocoder();
     geocoder.geocode( { 'address': direccion}, function(results, status) {
         if (status == google.maps.GeocoderStatus.OK) {
-            map.setCenter(results[0].geometry.location);
-            var sTxt = '<div><table><tr><td style="font-size:x-small; font-weight:bold;">comunicat en </td></tr><tr><td style="font-size:x-small; font-weight:normal;">' + sDireccionAlta + '</td></tr></table></div>';
-            //alert('ShowAdress');
-            nuevoMarcadorSobrePlanoClickInfoWindow(sMODO,map, results[0].geometry.location , sTxt ,null, 300 , true, true, 'labelDireccion',true);
-            //hgs comentat pq no reconeix mapa mapa.setCenter(results[0].geometry.location);
-            map.setCenter(results[0].geometry.location);
+            //hgs afegit aquest if
+            if (results[0]){
+                var sTxt = '<div><table><tr><td style="font-size:x-small; font-weight:bold;">comunicat en </td></tr><tr><td style="font-size:x-small; font-weight:normal;">' + sDireccionAlta + '</td></tr></table></div>';
+                nuevoMarcadorSobrePlanoClickInfoWindow(sMODO,map, results[0].geometry.location , sTxt ,null, 300 , true, true, 'labelDireccion',true);
+                map.setCenter(results[0].geometry.location);
+            }
+            else
+            {alert("No s'han trobat resultats");}
+
         } else {
-            //alert('La localització sobre plànol no ha estat posible per : ' + status);
+            alert('La localització sobre plànol no ha estat posible per: ' + status);
             $('#divMensajeMapa').show();
             $('#divMapaAlta').hide();
            // $('#divContieneMapa').hide();
