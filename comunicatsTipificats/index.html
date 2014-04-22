@@ -52,7 +52,7 @@
 <div data-role="page" id="pageIndex">
     <div data-role="header" data-theme="c">
         <a href="" data-icon="home" data-iconpos="notext" data-direction="reverse" onclick="salir();"></a>
-        <h5>GIV v14.4.22</h5>
+        <h5>GIV v14.4.22 1</h5>
         <a href="#pageInfo" data-rel="popup" data-role="button" data-transition="pop" data-icon="info" data-iconpos="notext">Info</a>
     </div>
     <div data-role="content" data-theme="c">
@@ -520,14 +520,9 @@
             sCoords ='';
             sCoord_X = '';
             sCoord_Y = '';
-            //hgs afegit nNumCalle
-            //if ($('#inputNUM').val()=='')
-            //    nNumCalle = 1;
-            //else
-            nNumCalle=$('#inputNUM').val();
 
-            //return sTipoVia + ' ' + sCalle + ', ' + $('#inputNUM').val();
-            return sTipoVia + ' ' + sCalle + ', ' + nNumCalle;
+            return sTipoVia + ' ' + sCalle + ', ' + $('#inputNUM').val();
+            //return sTipoVia + ' ' + sCalle + ', ' + nNumCalle;
         }
         else
             return new google.maps.LatLng(position.coords.latitude, position.coords.longitude);
