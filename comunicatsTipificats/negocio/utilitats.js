@@ -244,13 +244,14 @@ function crearMarcadorDesdeCalleNumOriginal(){
 function crearMarcadorDesdeCalleNum(){
     if($('#selectCARRER').find(":selected").text().trim() == '' || $('#inputNUM').val().trim() == '' ) return;
 
+
     var sTipoVia =  "";
     var sCalle =  "";
     var num ="";
 
     var sCodCalle = $('#selectCARRER').find(":selected").val();
     var sCalleGoogle = NomCalleGoogle(sCodCalle);
-
+alert('Estoy en crear marcador desde calle num');
 
     if(sCalleGoogle != "")
     {
@@ -258,7 +259,7 @@ function crearMarcadorDesdeCalleNum(){
         sCalle = sCalleGoogle;
         //if (TipusCarrer(sCodCalle) != 'PL')
         //{
-            num = $('#inputNUM').val().trim(); //}
+        // num = $('#inputNUM').val().trim(); //}
         /*else
         {num='1';}*/
     }
@@ -267,12 +268,15 @@ function crearMarcadorDesdeCalleNum(){
         var calle = $('#selectCARRER').find(":selected").text().trim();
         sTipoVia = calle.split("(")[1].substr(0,calle.split("(")[1].indexOf(")")).trim();
         sCalle = calle.split("(")[0].trim();
-        num = $('#inputNUM').val().trim();
     }
 
+
+    var num = $('#inputNUM').val();//.trim();
     var ciudad = getConfigKey('ciudad');
     var region = getConfigKey('region');
     var pais = getConfigKey('pais');
+
+    alert ('scalle ' + sCalle + ' resto: '+sTipoVia + ',' + num)
 
     showAddress('ALTA',mapAlta, sTipoVia,sCalle, num ,ciudad ,region,pais);
 }
@@ -307,18 +311,19 @@ function TipusCarrer(sCodCalle){
 
 
 function showAddress(sMODO,map, sTipoVia,sCalle,num,ciudad,region,pais) {
-
     sDireccionAlta = sTipoVia + " " + sCalle + ", " + num;
     //hgs parlat amb vilafranca del penedes
     //si es plaça es puntua al mig de la plaça
 
     var direccion = sDireccionAlta.trim() + ", " + ciudad + ", " + region + ", " + pais;
+    alert('estoy en show address direccion ' +direccion);
 
     var geocoder = new google.maps.Geocoder();
     geocoder.geocode( { 'address': direccion}, function(results, status) {
         if (status == google.maps.GeocoderStatus.OK) {
             //hgs afegit aquest if
             if (results[0]){
+                alert("resultat" + results[0].address.location);
                 var sTxt = '<div><table><tr><td style="font-size:x-small; font-weight:bold;">comunicat en </td></tr><tr><td style="font-size:x-small; font-weight:normal;">' + sDireccionAlta + '</td></tr></table></div>';
                 nuevoMarcadorSobrePlanoClickInfoWindow(sMODO,map, results[0].geometry.location , sTxt ,null, 300 , true, true, 'labelDireccion',true);
                 map.setCenter(results[0].geometry.location);
