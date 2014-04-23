@@ -250,13 +250,16 @@ function crearMarcadorDesdeCalleNum(){
     var num = "";
 
     var sCodCalle = $('#selectCARRER').find(":selected").val();
-    var sCalleGoogle = NomCalleGoogle(sCodCalle);
+    //hgs bona var sCalleGoogle = NomCalleGoogle(sCodCalle);
+    var sCalleGoogle = Carrer(sCodCalle);
 
  //   alert('Estoy en crear marcador desde calle num');
     if(sCalleGoogle != "")
     {
         sTipoVia = "";
-        sCalle = sCalleGoogle;
+        sCalle = sCalleGoogle; //hgs aquest es original
+
+
           //if (TipusCarrer(sCodCalle) != 'PL')
         //{
         // num = $('#inputNUM').val().trim(); //}
@@ -295,7 +298,6 @@ function NomCalleGoogle(sCodCalle){
 }
 
 //hgs nova per controlar quan es una plaça
-
 function TipusCarrer(sCodCalle){
     var sDev = "";
     for(var x=0; x<aCarrers.length ; x++)
@@ -303,6 +305,19 @@ function TipusCarrer(sCodCalle){
         if(aCarrers[x][0][1] == sCodCalle)
         {
             sDev =  aCarrers[x][1][1];
+            break;
+        }
+    }
+    return sDev ;
+}
+
+function Carrer(sCodCalle){
+    var sDev = "";
+    for(var x=0; x<aCarrers.length ; x++)
+    {
+        if(aCarrers[x][0][1] == sCodCalle)
+        {
+            sDev =  aCarrers[x][2][1];
             break;
         }
     }
