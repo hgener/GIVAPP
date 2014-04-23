@@ -251,8 +251,8 @@ function crearMarcadorDesdeCalleNum(){
 
     var sCodCalle = $('#selectCARRER').find(":selected").val();
     var sCalleGoogle = NomCalleGoogle(sCodCalle);
-alert('Estoy en crear marcador desde calle num');
 
+    alert('Estoy en crear marcador desde calle num');
     if(sCalleGoogle != "")
     {
         sTipoVia = "";
