@@ -253,18 +253,10 @@ function crearMarcadorDesdeCalleNum(){
     //hgs bona var sCalleGoogle = NomCalleGoogle(sCodCalle);
     var sCalleGoogle = Carrer(sCodCalle);
 
- //   alert('Estoy en crear marcador desde calle num');
     if(sCalleGoogle != "")
     {
         sTipoVia = "";
-        sCalle = sCalleGoogle; //hgs aquest es original
-
-
-          //if (TipusCarrer(sCodCalle) != 'PL')
-        //{
-        // num = $('#inputNUM').val().trim(); //}
-        /*else
-        {num='1';}*/
+        sCalle = sCalleGoogle;
     }
     else
     {
@@ -272,15 +264,10 @@ function crearMarcadorDesdeCalleNum(){
         sTipoVia = calle.split("(")[1].substr(0,calle.split("(")[1].indexOf(")")).trim();
         sCalle = calle.split("(")[0].trim();
     }
-
-
     var num = $('#inputNUM').val().trim();
     var ciudad = getConfigKey('ciudad');
     var region = getConfigKey('region');
     var pais = getConfigKey('pais');
-
-   // alert ('scalle ' + sCalle + ' resto: '+sTipoVia + ',' + num)
-
     showAddress('ALTA',mapAlta, sTipoVia,sCalle, num ,ciudad ,region,pais);
 }
 
@@ -327,11 +314,9 @@ function Carrer(sCodCalle){
 
 function showAddress(sMODO,map, sTipoVia,sCalle,num,ciudad,region,pais) {
     sDireccionAlta = sTipoVia + " " + sCalle + ", " + num;
-    //hgs parlat amb vilafranca del penedes
-    //si es plaça es puntua al mig de la plaça
 
     var direccion = sDireccionAlta.trim() + ", " + ciudad + ", " + region + ", " + pais;
-    alert('estoy en show address direccion ' +direccion);
+    //alert('estoy en show address direccion ' +direccion);
 
     var geocoder = new google.maps.Geocoder();
     geocoder.geocode( { 'address': direccion}, function(results, status) {
@@ -347,7 +332,7 @@ function showAddress(sMODO,map, sTipoVia,sCalle,num,ciudad,region,pais) {
            // {alert("No s'han trobat resultats");}
 
         } else {
-            alert('La localització sobre plànol no ha estat posible per: ' + status);
+            //alert('La localització sobre plànol no ha estat posible per: ' + status);
             $('#divMensajeMapa').show();
             $('#divMapaAlta').hide();
            // $('#divContieneMapa').hide();
