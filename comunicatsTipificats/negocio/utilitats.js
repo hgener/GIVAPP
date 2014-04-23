@@ -247,7 +247,7 @@ function crearMarcadorDesdeCalleNum(){
 
     var sTipoVia =  "";
     var sCalle =  "";
-    var num ="";
+    var num = "";
 
     var sCodCalle = $('#selectCARRER').find(":selected").val();
     var sCalleGoogle = NomCalleGoogle(sCodCalle);
@@ -257,7 +257,7 @@ function crearMarcadorDesdeCalleNum(){
     {
         sTipoVia = "";
         sCalle = sCalleGoogle;
-        //if (TipusCarrer(sCodCalle) != 'PL')
+          //if (TipusCarrer(sCodCalle) != 'PL')
         //{
         // num = $('#inputNUM').val().trim(); //}
         /*else
@@ -271,12 +271,12 @@ function crearMarcadorDesdeCalleNum(){
     }
 
 
-    var num = $('#inputNUM').val();//.trim();
+    var num = $('#inputNUM').val().trim();
     var ciudad = getConfigKey('ciudad');
     var region = getConfigKey('region');
     var pais = getConfigKey('pais');
 
-    alert ('scalle ' + sCalle + ' resto: '+sTipoVia + ',' + num)
+   // alert ('scalle ' + sCalle + ' resto: '+sTipoVia + ',' + num)
 
     showAddress('ALTA',mapAlta, sTipoVia,sCalle, num ,ciudad ,region,pais);
 }
@@ -322,14 +322,14 @@ function showAddress(sMODO,map, sTipoVia,sCalle,num,ciudad,region,pais) {
     geocoder.geocode( { 'address': direccion}, function(results, status) {
         if (status == google.maps.GeocoderStatus.OK) {
             //hgs afegit aquest if
-            if (results[0]){
-                alert("resultat" + results[0].address.location);
+           // if (results[0]){
+           //     alert("resultat" + results[0].address.location);
                 var sTxt = '<div><table><tr><td style="font-size:x-small; font-weight:bold;">comunicat en </td></tr><tr><td style="font-size:x-small; font-weight:normal;">' + sDireccionAlta + '</td></tr></table></div>';
                 nuevoMarcadorSobrePlanoClickInfoWindow(sMODO,map, results[0].geometry.location , sTxt ,null, 300 , true, true, 'labelDireccion',true);
                 map.setCenter(results[0].geometry.location);
-            }
-            else
-            {alert("No s'han trobat resultats");}
+           // }
+           // else
+           // {alert("No s'han trobat resultats");}
 
         } else {
             alert('La localització sobre plànol no ha estat posible per: ' + status);
