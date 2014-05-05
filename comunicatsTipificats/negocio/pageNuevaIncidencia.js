@@ -224,109 +224,6 @@ function prueba(){
 }
 
 // -------- LOCALIZACIÓN -----------------------------------------------------------------------
-function iniciaMapaAltaOriginal(bAbrir) {
-    //que no vuelva a coger la dirección actual si hay ya una en esta variable
-    //(para que al igual que el resto de datos se conserve esta dirección en el form)
-    if(sDireccionAlta.trim() != '') return;
-
-    try{
-        var mapOptions = {
-            zoom: 14,
-            mapTypeId: google.maps.MapTypeId.ROADMAP,
-            //accuracy: 10,
-            enabledHighAccuracy:true,
-            panControl: false,
-            rotateControl: false,
-            scaleControl: false,
-            zoomControl: false,
-            streetViewControl: false
-            ,maximumAge:0//,timeout:1000
-        };
-        mapAlta = new google.maps.Map(document.getElementById('divMapaAlta'), mapOptions);
-
-        // Try HTML5 geolocation
-        if (navigator.geolocation) {
-            navigator.geolocation.getCurrentPosition(function (position) {
-                crearMarcadorEventoClick('ALTA', mapAlta, true,'labelDireccion', true);
-                posAlta = new google.maps.LatLng(position.coords.latitude, position.coords.longitude);
-                mapAlta.setCenter(posAlta);
-                //alert('iniciaMapaAlta. sDireccionAlta: ' + sDireccionAlta);
-                sDireccionAlta = cogerDireccion(posAlta, true);
-                $('#labelDireccion').text(sDireccionAlta); /*HGS 101213*/
-                $('#divMensajeMapa').hide();
-                /*            var sTxt = '<div><table><tr><td style="font-size:x-small; font-weight:bold;">comunicat en </td></tr><tr><td style="font-size:x-small; font-weight:normal;">' + sDireccionAlta + '</td></tr></table></div>';
-                 nuevoMarcadorSobrePlanoClickInfoWindow('ALTA', mapAlta, posAlta,sTxt,null,300,true,true);
-                 $('#labelDireccion').text(sDireccionAlta);
-                 $('#divMapaAlta').gmap('refresh');*/
-
-                $('#divMapaAlta').gmap('refresh');
-                //$(".gm-style-cc").hide();
-            }, function () {
-                ('#divMapaAlta').hide();
-                $('#divMensajeMapa').show();
-                getCurrentPositionError(true);
-            });
-        } else {
-            // Browser no soporta Geolocation
-            $('#divMapaAlta').hide();
-            $('#divMensajeMapa').show();
-            getCurrentPositionError(false);
-        }
-
-
-    }
-    catch(e)
-    {
-        $('#divMapaAlta').hide();
-        $('#divMensajeMapa').show();
-    }
-}
-function iniciaMapaFotoOriginal(bAbrir) {
-    try{
-        var mapOptions = {
-            zoom: 14,
-            mapTypeId: google.maps.MapTypeId.ROADMAP,
-            //accuracy:10,
-            enabledHighAccuracy:true,
-            overviewMapControl: false,
-            panControl: false,
-            rotateControl: false,
-            scaleControl: false,
-            zoomControl: false,
-            streetViewControl: false
-            ,maximumAge:0//,timeout:1000
-        };
-        mapAlta = new google.maps.Map(document.getElementById('divMapaAlta'), mapOptions);
-
-        // Try HTML5 geolocation
-        if (navigator.geolocation) {
-            navigator.geolocation.getCurrentPosition(function (position) {
-                crearMarcadorEventoClick('ALTA', mapAlta, true,'labelDireccion', true);
-                posAlta = new google.maps.LatLng(position.coords.latitude, position.coords.longitude);
-                mapAlta.setCenter(posAlta);
-                sDireccionAlta = cogerDireccion(posAlta, true);
-                $('#labelDireccion').text(sDireccionAlta);
-                $('#divMensajeMapa').hide();
-                $('#divMapaAlta').gmap('refresh');
-
-            }, function () {
-                ('#divMapaAlta').hide();
-                $('#divMensajeMapa').show();
-                getCurrentPositionError(true);
-            });
-        } else {
-            // Browser no soporta Geolocation
-            $('#divMapaAlta').hide();
-            $('#divMensajeMapa').show();
-            getCurrentPositionError(false);
-        }
-    }
-    catch(e)
-    {
-        $('#divMapaAlta').hide();
-        $('#divMensajeMapa').show();
-    }
-}
 
 function iniciaMapaAlta(bAbrir) {
     //que no vuelva a coger la dirección actual si hay ya una en esta variable
@@ -387,11 +284,8 @@ function iniciaMapaAlta(bAbrir) {
     }
 }
 
-
 function iniciaMapaFoto(bAbrir) {
     try{
-
-
         // Try HTML5 geolocation
         if (navigator.geolocation) {
             navigator.geolocation.getCurrentPosition(function (position) {
@@ -412,7 +306,6 @@ function iniciaMapaFoto(bAbrir) {
                     ,maximumAge:0//,timeout:1000
                 };
                 mapAlta = new google.maps.Map(document.getElementById('divMapaAlta'), mapOptions);
-
                 crearMarcadorEventoClick('ALTA', mapAlta, true,'labelDireccion', true);
 
                 //mapAlta.setCenter(posAlta);
@@ -457,11 +350,9 @@ function cogerDireccion(pos , bSoloCalleYnum){
 }
 function direccionObtenida(datos, param){
     if(datos == null ) return;
-
-
     var sDireccion = $(datos).find('formatted_address').text();
-
     var n = 0;
+
     $(datos).find('formatted_address').each(function () {
         if (n == 0) sDireccion = $(this).text();
         n++;
@@ -472,7 +363,6 @@ function direccionObtenida(datos, param){
             sDireccion = cogerCalleNumDeDireccion(sDireccion);
 
     sDireccionAlta = sDireccion;
-
     var sTxt = '<div><table><tr><td style="font-size:x-small; font-weight:bold;">comunicat en </td></tr><tr><td style="font-size:x-small; font-weight:normal;">' + sDireccionAlta + '</td></tr></table></div>';
 
     //alert('direccionObtenida. bPrimera: ' + bPrimera);
@@ -557,9 +447,9 @@ function enviarIncidencia() {
 }
 function enviarComunicat_WS(sParams,bNuevoComunicat){
     //dmz
-    var llamaWS = "http://80.39.72.44:8000/wsAPPGIV/wsIncidentNotifierGIV.asmx/IncidenciaTipus";
+    //var llamaWS = "http://80.39.72.44:8000/wsAPPGIV/wsIncidentNotifierGIV.asmx/IncidenciaTipus";
     //vila
-    //var llamaWS = "http://www.vilafranca.cat/wsAPPGIV/wsIncidentNotifierGIV.asmx/IncidenciaTipus";
+    var llamaWS = "http://www.vilafranca.cat/wsAPPGIV/wsIncidentNotifierGIV.asmx/IncidenciaTipus";
 
     //alert ('sParams en enviarcomunicat ' + sParams.sId + ','+ sParams.sDescItem +','+sParams.sCoord + ',' + sParams.sObs);
     //alert('llamaWS ' + llamaWS + 'bNuevoComunicat ' + bNuevoComunicat);
@@ -664,9 +554,9 @@ function enviarComunicat_WS(sParams,bNuevoComunicat){
 function enviarComunicatPendiente_WS(sParams, bNuevoComunicat ){
     var sDev = '';
     //dmz
-    var llamaWS ="http://80.39.72.44:8000/wsAPPGIV/wsIncidentNotifierGIV.asmx/IncidenciaTipus";
+    //var llamaWS ="http://80.39.72.44:8000/wsAPPGIV/wsIncidentNotifierGIV.asmx/IncidenciaTipus";
     //vila
-    //var llamaWS ="http://www.vilafranca.cat/wsAPPGIV/wsIncidentNotifierGIV.asmx/IncidenciaTipus";
+    var llamaWS ="http://www.vilafranca.cat/wsAPPGIV/wsIncidentNotifierGIV.asmx/IncidenciaTipus";
     var sMensaje = "";
     var sTitulo = "";
 

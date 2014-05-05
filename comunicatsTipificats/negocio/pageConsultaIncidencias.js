@@ -446,9 +446,9 @@ function ActualitzaComunicats(sParams){
 
     var aParams = {sIds:sParams};
     //dmz
-    var llamaWS = "http://80.39.72.44:8000/wsAPPGIV/wsIncidentNotifierGIV.asmx/ConsultaComunicatsTipus";
+    //var llamaWS = "http://80.39.72.44:8000/wsAPPGIV/wsIncidentNotifierGIV.asmx/ConsultaComunicatsTipus";
     //vila hauria
-    //var llamaWS = "http://www.vilafranca.cat/wsAPPGIV/wsIncidentNotifierGIV.asmx/ConsultaComunicatsTipus";
+    var llamaWS = "http://www.vilafranca.cat/wsAPPGIV/wsIncidentNotifierGIV.asmx/ConsultaComunicatsTipus";
 
 //    alert('enviem les pendents');
     $.post(llamaWS, aParams).done(function(datos) {
