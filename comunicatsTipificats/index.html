@@ -40,7 +40,6 @@
 
     <script type="text/javascript" charset="utf-8" src="phonegap.js"></script>
 
-    <!-- Mapa 230414 afegit &language=ca-ES-->
     <script src="https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=true&language=ca-ES"></script>
 
     <!--mail-->
@@ -60,10 +59,24 @@
 <!-- Página Principal  -->
 <div data-role="page" id="pageIndex">
     <div data-role="header" data-theme="c">
-         <a href="" data-icon="home" data-iconpos="notext" data-direction="reverse" onclick="salir();"></a>
+
+        <table style="text-align: center; width: 100%">
+            <tr>
+                <td style="text-align: left"><!--<a href="" data-icon="home" data-iconpos="notext" data-direction="reverse" onclick="salir();">Home</a>-->
+                    <img href="" data-role="button" data-theme="b" id="Sortir" src="images/Enrera.png" onclick="salir();"/>
+                </td>
+                <td><h5>GIV v14.5.5.18</h5></td>
+                <td style="text-align: right"><!--<a href="#pageInfo" data-rel="popup" data-role="button" data-transition="pop" data-icon="info" class="ui-btn">Info</a>-->
+                    <img href="#pageInfo" id="info" data-role="button" data-rel="popup" src="images/info1.png" onclick="salir();"/>
+                </td>
+            </tr>
+        </table>
+
+
+
+
         <!--<a href="" class="iconBack" data-icon="home" data-iconpos="notext" data-direction="reverse" onclick="salir();"></a>-->
-        <h5>GIV v14.5.5.13</h5>
-        <a href="#pageInfo" data-rel="popup" data-role="button" data-transition="pop" data-icon="info" data-iconpos="notext">Info</a>
+        <!-- moga <a href="#pageInfo" class="iconBack" data-rel="popup" data-role="button" data-transition="pop" data-icon="info" data-iconpos="notext">Info</a>-->
     </div>
     <div data-role="content" data-theme="c">
         <p style="text-align: center;"><img src="images/ciutadans.gif" width="80%;" /></p>
@@ -75,10 +88,8 @@
             <a href="" onclick="abrirPagina('pageConsultaIncidencias', false)" id="buttonCONSULTA" data-mini="false" data-inline="false" data-role="button" data-theme="c">Els meus <br/>comunicats</a>
         </div>
     </div>
-<!--    <div data-role="footer" data-theme="f" data-position="fixed" style="text-align: center;">
-<table style="width:100%;">-->
-    <div data-role="footer" data-theme="f" style="text-align: center;">
-        <table>
+    <div data-role="footer" data-theme="f" style="text-align:center;" data-position="fixed">
+        <table style="width: 100%; ">
             <tr>
                 <td style="background-color:LightGrey;">
                     <label id="labelPieIndex" style="color:Gray; font-size:small; font-weight:normal; background-color:LightGrey;">
@@ -112,12 +123,23 @@
 
 <div data-role="page" id="pageNuevaIncidencia">
     <div data-role="header" data-theme="c">
-         <a href="index.html" data-icon="back" data-iconpos="notext" data-direction="reverse" onclick="abrirPagina('pageIndex', false);"></a>
-        <!--<a href="index.html" class="iconBack" data-icon="back" data-iconpos="notext" data-direction="reverse" onclick="abrirPagina('pageIndex', false);"></a>-->
+        <table style="width: 100%">
+            <tr>
+                <td>
+                    <!-- <a href="index.html" data-icon="back" data-iconpos="notext" data-direction="reverse" onclick="abrirPagina('pageIndex', false);"></a>-->
+                    <img href="index.html" data-role="button" data-theme="b"  src="images/Enrera.png" onclick="abrirPagina('pageIndex', false);"/>
+                    <!--<a href="index.html" class="iconBack" data-icon="back" data-iconpos="notext" data-direction="reverse" onclick="abrirPagina('pageIndex', false);"></a>-->
+                </td>
+                <td style="text-align: center">
+                    <h5>Nou Comunicat</h5>
+                </td>
+                <td>
+                    <!-- hgs de moment ho comento
+                            <a href="#pageInfo3" data-rel="popup" data-role="button" data-transition="pop" data-icon="info" data-iconpos="notext">Info</a>-->
+                </td>
+            </tr>
+        </table>
 
-        <h5>nou comunicat</h5>
-       <!-- hgs de moment ho comento
-        <a href="#pageInfo3" data-rel="popup" data-role="button" data-transition="pop" data-icon="info" data-iconpos="notext">Info</a>-->
     </div>
     <div data-role="content" data-theme="c" data-mini="false">
         <!--<hgs aquest anchor abans no estaba tancat>-->
@@ -281,8 +303,6 @@
             <!--</div>-->
         </div>
     </div>
-
-
     <!-- PopUp INFO3
     <div data-role="popup" id="pageInfo3" data-theme="c" data-overlay-theme="a" style="max-width:95%;" class="ui-corner-all">
         <div data-role="header" data-theme="a" class="ui-corner-top">
@@ -305,17 +325,24 @@
             </p>
         </div>
     </div> -->
-
 </div>
 
 <div data-role="page" id="pageConsultaIncidencias">
     <div data-role="header" data-theme="c">
-         <a href="index.html" data-icon="back" data-iconpos="notext" data-direction="reverse" onclick="abrirPagina('pageIndex', false);"></a>
-        <!--<a href="index.html" class="iconBack" data-icon="back" data-iconpos="notext" data-direction="reverse" onclick="abrirPagina('pageIndex', false);"></a>-->
+        <table style="width: 100%">
+            <tr>
+                <td>
+                    <!--<a href="index.html" data-icon="back" data-iconpos="notext" data-direction="reverse" onclick="abrirPagina('pageIndex', false);"></a>-->
+                    <img href="index.html" data-role="button" data-theme="b"  src="images/Enrera.png" onclick="abrirPagina('pageIndex', false);"/>
+                    <!--<a href="index.html" class="iconBack" data-icon="back" data-iconpos="notext" data-direction="reverse" onclick="abrirPagina('pageIndex', false);"></a>-->
 
-        <h5>reportats</h5>
-        <!--hgs de moment ho comento
-        <a href="#pageInfo2" data-rel="popup" data-role="button" data-transition="pop" data-icon="info" data-iconpos="notext">Info</a>-->
+                </td>
+                <td>        <h5>Reportats</h5></td>
+                <td><!--hgs de moment ho comento
+        <a href="#pageInfo2" data-rel="popup" data-role="button" data-transition="pop" data-icon="info" data-iconpos="notext">Info</a>--></td>
+            </tr>
+        </table>
+
     </div>
     <!-- Panel lateral -->
     <div data-role="panel" id="panelDadesComunicat" data-position="right" data-display="reveal" data-animate="true">
