@@ -53,6 +53,7 @@ function deviceReady() {
 //hgs he cambiado transition flip por slide
 //transition: "fade",
 function abrirPagina(sPag, bBack) {
+
     $("#pageIndex").hide();
     $("#pageNuevaIncidencia").hide();
     $("#pageConsultaIncidencias").hide();
@@ -63,30 +64,30 @@ function abrirPagina(sPag, bBack) {
         changeHash: bBack
     });
 
-
-
-
     switch(sPag)
     {
-
         case 'pageIndex' :
             $("#pageIndex").show();
             $("#opcions").show();
             break;
 
         case 'pageNuevaIncidencia' :
-            //Abrir el acordeón para actualizar el plano
-/*            $("#collapsibleLocalizacion").trigger("expand");
-            $('#divMapaAlta').show();*/
             //espero a que esté cargado el div para que se renderice bien el plano ...
-            //abans a 1000
             $("#pageNuevaIncidencia").show();
+            //hgs
+            $("#pageIndex").hide();
+            $("#pageConsultaIncidencias").hide();
+            //hgs
             $.doTimeout(2000, inicioPaginaNuevaIncidencia() );
             break;
 
         case 'pageConsultaIncidencias' :
-            inicioPaginaConsultaIncidencias();
             $("#pageConsultaIncidencias").show();
+            //hgs
+            $("#pageIndex").hide();
+            $("#pageNuevaIncidencia").hide();
+            //hgs
+            inicioPaginaConsultaIncidencias();
             //espero a que esté cargado el div para que se renderice bien el plano ...
             //setTimeout(inicializarPagina,1000);
             $.doTimeout(1000, mostrarEnPlano() );
