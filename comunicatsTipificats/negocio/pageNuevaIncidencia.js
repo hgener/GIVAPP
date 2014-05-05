@@ -447,9 +447,9 @@ function enviarIncidencia() {
 }
 function enviarComunicat_WS(sParams,bNuevoComunicat){
     //dmz
-    //var llamaWS = "http://80.39.72.44:8000/wsAPPGIV/wsIncidentNotifierGIV.asmx/IncidenciaTipus";
+    var llamaWS = "http://80.39.72.44:8000/wsAPPGIV/wsIncidentNotifierGIV.asmx/IncidenciaTipus";
     //vila
-    var llamaWS = "http://www.vilafranca.cat/wsAPPGIV/wsIncidentNotifierGIV.asmx/IncidenciaTipus";
+    //var llamaWS = "http://www.vilafranca.cat/wsAPPGIV/wsIncidentNotifierGIV.asmx/IncidenciaTipus";
 
     //alert ('sParams en enviarcomunicat ' + sParams.sId + ','+ sParams.sDescItem +','+sParams.sCoord + ',' + sParams.sObs);
     //alert('llamaWS ' + llamaWS + 'bNuevoComunicat ' + bNuevoComunicat);
@@ -554,9 +554,9 @@ function enviarComunicat_WS(sParams,bNuevoComunicat){
 function enviarComunicatPendiente_WS(sParams, bNuevoComunicat ){
     var sDev = '';
     //dmz
-    //var llamaWS ="http://80.39.72.44:8000/wsAPPGIV/wsIncidentNotifierGIV.asmx/IncidenciaTipus";
+    var llamaWS ="http://80.39.72.44:8000/wsAPPGIV/wsIncidentNotifierGIV.asmx/IncidenciaTipus";
     //vila
-    var llamaWS ="http://www.vilafranca.cat/wsAPPGIV/wsIncidentNotifierGIV.asmx/IncidenciaTipus";
+    //var llamaWS ="http://www.vilafranca.cat/wsAPPGIV/wsIncidentNotifierGIV.asmx/IncidenciaTipus";
     var sMensaje = "";
     var sTitulo = "";
 
