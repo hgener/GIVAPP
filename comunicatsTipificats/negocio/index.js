@@ -61,7 +61,7 @@ function abrirPagina(sPag, bBack) {
 */
 
     $.mobile.changePage('#' + sPag, {
-        transition: "pop",
+        //transition: "pop",
         reverse: true,
         changeHash: bBack
     });

@@ -451,11 +451,16 @@ function enviarIncidencia() {
     //alert('Nom persona' + $('#inputCOGNOM1').val() + ' , ' +$('#inputCOGNOM2').val());
     var  sParams = {sId:$('#IdItem').val()+'',sDescItem:$('#labelItem').text()+'' ,sNom:$('#inputNOM').val() + '',sCognom1:$('#inputCOGNOM1').val() + '',sCognom2:$('#inputCOGNOM2').val() + '',sDni:$('#inputDNI').val() + '',sEmail:$('#inputEMAIL').val() + '',sTelefon:$('#inputTELEFON').val() + '',sObs:sComentario + '',sCoord:sCoords + '',sCodCarrer:$('#selectCARRER').val() + '',sCarrer:$('#selectCARRER').find(':selected').text() + '',sNumPortal:$('#inputNUM').val() + '',sFoto: sFoto};
 
-    //alert('inactivo');
-    $("#buttonEnviar").attr("disabled", "disabled");//hgs 05/12/13
+    alert('inactivo');
+    //$("#buttonEnviar").attr("disabled", "disabled");//hgs 05/12/13
+    $("#buttonEnviar").button('disable');
+    $("#buttonEnviar").button('refresh');
     var ref = enviarComunicat_WS(sParams, true);
-    // alert('pase lo que passe activo');
-    $("#buttonEnviar").removeAttr("disabled"); //hgs 05/12/13
+     alert('pase lo que passe activo');
+    //$("#buttonEnviar").removeAttr("disabled"); //hgs 05/12/13
+    $("#buttonEnviar").button('enable');
+    $("#buttonEnviar").button('refresh');
+
 
 
 }
