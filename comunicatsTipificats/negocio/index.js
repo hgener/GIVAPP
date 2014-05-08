@@ -76,7 +76,7 @@ function abrirPagina(sPag, bBack) {
         case 'pageNuevaIncidencia' :
             //espero a que esté cargado el div para que se renderice bien el plano ...
          /*   moga /$("#pageNuevaIncidencia").show();*/
-            $.doTimeout(2000, inicioPaginaNuevaIncidencia() );
+            $.doTimeout(1500, inicioPaginaNuevaIncidencia() );
             break;
 
         case 'pageConsultaIncidencias' :

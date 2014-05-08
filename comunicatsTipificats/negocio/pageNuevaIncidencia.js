@@ -241,12 +241,13 @@ function iniciaMapaAlta(bAbrir) {
                     accuracy: 5,
                     center:posAlta, //afegit 170414
                     enabledHighAccuracy:true,
+                    overviewMapControl: false,
                     panControl: false,
                     rotateControl: false,
                     scaleControl: false,
                     zoomControl: false,
                     streetViewControl: false
-                    //,maximumAge:0//,timeout:1000
+                    ,maximumAge:0//,timeout:1000
                 };
                 mapAlta = new google.maps.Map(document.getElementById('divMapaAlta'), mapOptions);
                 crearMarcadorEventoClick('ALTA', mapAlta, true,'labelDireccion', true);
