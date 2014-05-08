@@ -51,7 +51,7 @@ function inicioPaginaNuevaIncidencia(){
     cargaLetrasAbcdario(combo, 'lletra inicial' , nLetra );
 
     //alert('InicioPaginaNuevaIncidencia');
-    // ho poso dintre del timeout iniciaMapaAlta(true);
+    iniciaMapaAlta(true);
 
     //hgs080514, por si habia algunafoto
     eliminarFoto();
@@ -67,7 +67,8 @@ function inicioPaginaNuevaIncidencia(){
     $.doTimeout(1000,cierraMapaAbreComentario());*/
 
     $.doTimeout(1000, function() {
-        iniciaMapaAlta(true);
+        //iniciaMapaAlta(true);
+        reposicionaMapa();
         var combo = $('#selectLletraIniCARRER');
         cargaLetrasAbcdario(combo, 'lletra inicial' , nLetra );
         bAbroPagina=false;

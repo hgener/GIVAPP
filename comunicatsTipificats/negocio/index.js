@@ -121,6 +121,11 @@ function limpiaVariables(sPag){
     }
 }
 
+function reposicionaMapa(){
+    actualizarComboCalle();
+    iniciaMapaFoto(true);
+}
+
 
 
 
