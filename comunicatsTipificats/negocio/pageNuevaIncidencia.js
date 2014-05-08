@@ -51,8 +51,10 @@ function inicioPaginaNuevaIncidencia(){
     cargaLetrasAbcdario(combo, 'lletra inicial' , nLetra );
 
     //alert('InicioPaginaNuevaIncidencia');
-    //iniciar el plano
-    iniciaMapaAlta(true);
+    // ho poso dintre del timeout iniciaMapaAlta(true);
+
+    //hgs080514, por si habia algunafoto
+    eliminarFoto();
 //        preseleccionar la inicial, cargar CARRERS de esa inicial en el combo de iniciales y preseleccionar la calle
 //        var sC = cogerCalleNumDeDireccion(sDireccionAlta);
 //        nLetra = sC.substr(0,1).toUpperCase().charCodeAt(0);
@@ -65,12 +67,14 @@ function inicioPaginaNuevaIncidencia(){
     $.doTimeout(1000,cierraMapaAbreComentario());*/
 
     $.doTimeout(1000, function() {
+        iniciaMapaAlta(true);
         var combo = $('#selectLletraIniCARRER');
         cargaLetrasAbcdario(combo, 'lletra inicial' , nLetra );
         bAbroPagina=false;
         cierraMapaAbreComentario();
     });
 }
+
 function cargaDatosCiudadano(){
     var objUsu = getDatosUsuario();
     if(objUsu != null)
@@ -91,6 +95,7 @@ function cargaDatosCiudadano(){
     else
         return '';
 }
+
 function cargaCalles(){
     if(aCarrers == null)
         mensaje("No s'han trobat carrers","informació");
@@ -109,6 +114,7 @@ function cargaCalles(){
         $('#selectCARRER').append(calles.join('')).selectmenu('refresh');
     }
 }
+
 function autoRellenoCalleNum()/**/{
     if(sDireccionAlta == '' || aGlobalCarrers == null || aGlobalCarrers.length < 1) return;
 
@@ -139,6 +145,7 @@ function autoRellenoCalleNum()/**/{
     }
     catch(e){}
 }
+
 function cierraMapaAbreComentario(){
     $('#collapsibleItem').trigger('expand');
     $('#collapsibleLocalizacion').trigger('collapse');
@@ -349,6 +356,7 @@ function cogerDireccion(pos , bSoloCalleYnum){
     }
     //return sDireccion;
 }
+
 function direccionObtenida(datos, param){
     if(datos == null ) return;
     var sDireccion = $(datos).find('formatted_address').text();
@@ -388,10 +396,10 @@ function direccionObtenida(datos, param){
 function fail(error) {
     alert(error);
 }
+
 function enviarIncidencia() {
 
-    //alert('inactivo');
-    $("#buttonEnviar").attr("disabled", "disabled");//hgs 05/12/13
+
 
     guardaDatosCiudadano();
 
@@ -442,10 +450,15 @@ function enviarIncidencia() {
     //alert('Nom persona' + $('#inputCOGNOM1').val() + ' , ' +$('#inputCOGNOM2').val());
     var  sParams = {sId:$('#IdItem').val()+'',sDescItem:$('#labelItem').text()+'' ,sNom:$('#inputNOM').val() + '',sCognom1:$('#inputCOGNOM1').val() + '',sCognom2:$('#inputCOGNOM2').val() + '',sDni:$('#inputDNI').val() + '',sEmail:$('#inputEMAIL').val() + '',sTelefon:$('#inputTELEFON').val() + '',sObs:sComentario + '',sCoord:sCoords + '',sCodCarrer:$('#selectCARRER').val() + '',sCarrer:$('#selectCARRER').find(':selected').text() + '',sNumPortal:$('#inputNUM').val() + '',sFoto: sFoto};
 
+    //alert('inactivo');
+    $("#buttonEnviar").attr("disabled", "disabled");//hgs 05/12/13
     var ref = enviarComunicat_WS(sParams, true);
+    // alert('pase lo que passe activo');
+    $("#buttonEnviar").removeAttr("disabled"); //hgs 05/12/13
 
 
 }
+
 function enviarComunicat_WS(sParams,bNuevoComunicat){
     //dmz
     var llamaWS = "http://80.39.72.44:8000/wsAPPGIV/wsIncidentNotifierGIV.asmx/IncidenciaTipus";
@@ -549,9 +562,9 @@ function enviarComunicat_WS(sParams,bNuevoComunicat){
     {
         mensaje('ERROR (exception) en enviarComunicat_WS : \n' + e.code + '\n' + e.message);
     }
-   // alert('pase lo que passe activo');
-    $("#buttonEnviar").removeAttr("disabled"); //hgs 05/12/13
+
 }
+
 function enviarComunicatPendiente_WS(sParams, bNuevoComunicat ){
     var sDev = '';
     //dmz
@@ -597,6 +610,7 @@ function enviarComunicatPendiente_WS(sParams, bNuevoComunicat ){
     });
     return sDev;
 }
+
 function guardaDatosCiudadano(){
     try
     {
@@ -637,6 +651,7 @@ function guardaDatosCiudadano(){
         mensaje(e.message , 'error');
     }
 }
+
 function datosObligatorios(sId, sDir, sDni , sEmail, sTelefon){
     if(sId == null || sId.trim() == '') return "Les dades marcades amb (*) són obligatòries\nFalta 'què passa'" ;
     if(sDir == null || sDir.trim() == '') return "Les dades marcades amb (*) són obligatòries\nFalta 'on està passant'";
@@ -671,6 +686,7 @@ function datosObligatorios(sId, sDir, sDni , sEmail, sTelefon){
     }
     return "";
 }
+
 function guardaIncidencia(sReferen, sEstado){
     try
     {
@@ -707,6 +723,7 @@ function guardaIncidencia(sReferen, sEstado){
         return -1;
     }
 }
+
 function guardaFotoEnLocal(nId,sFoto){
       guardaObjetoLocal('FOTO_' + nId.toString().trim() , sFoto);
 }
