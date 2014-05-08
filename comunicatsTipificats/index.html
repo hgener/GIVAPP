@@ -65,7 +65,7 @@
                 <td style="text-align: left"><!--<a href="" data-icon="home" data-iconpos="notext" data-direction="reverse" onclick="salir();">Home</a>-->
                     <img href="" data-theme="b" data-role="button" id="Sortir" src="images/Enrera.png" onclick="salir();"/>
                 </td>
-                <td><h5>GIV v14.5.8.4</h5></td>
+                <td><h5>GIV v14.5.8.5</h5></td>
                 <td style="text-align: right">
                     <a href="#pageInfo" data-rel="popup" data-role="button" data-transition="pop" data-icon="info" data-iconpos="notext">Info</a>
                     <!--moga <a href="#pageInfo" class="iconBack" data-rel="popup" data-role="button" data-transition="pop" data-icon="info" data-iconpos="notext">Info</a>-->
@@ -592,6 +592,18 @@
     }
 
 
+    $( document ).on( "mobileinit", function() {
+        $.mobile.loader.prototype.options.text = "loading";
+        $.mobile.loader.prototype.options.textVisible = false;
+        $.mobile.loader.prototype.options.theme = "a";
+        $.mobile.loader.prototype.options.html = "";
+    });
+    $.mobile.loading( "show", {
+        text: "foo",
+        textVisible: true,
+        theme: "z",
+        html: ""
+    });
 
 </script>
 

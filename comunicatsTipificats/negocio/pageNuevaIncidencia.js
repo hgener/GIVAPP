@@ -454,6 +454,7 @@ function enviarIncidencia() {
     alert('inactivo');
     //$("#buttonEnviar").attr("disabled", "disabled");//hgs 05/12/13
     $("#buttonEnviar").button('disable');
+
     $("#buttonEnviar").button('refresh');
     var ref = enviarComunicat_WS(sParams, true);
      alert('pase lo que passe activo');

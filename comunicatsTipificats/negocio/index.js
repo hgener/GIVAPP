@@ -17,7 +17,7 @@ window.addEventListener('load', function () {
 
 function deviceReady() {
 
-
+    document.addEventListener("backbutton", handleBackButton, true); //Hgs 080514
 
     if (phoneGapRun()) {
         pictureSource = navigator.camera.PictureSourceType;
@@ -45,8 +45,20 @@ function deviceReady() {
         }
     navigator.splashscreen.hide();
 
-
 }
+function handleBackButton(){
+
+    if($.mobile.activePage.attr('id') == '#pageIndex'){
+        navigator.app.exitApp();
+    }else if ($.mobile.activePage.attr('id') == '#pageZoomFoto'){
+        $.mobile.changePage('#pageNuevaIncidencia');
+    }else if ($.mobile.activePage.attr('id') == '#pageNuevaIncidencia'|| $.mobile.activePage.attr('id') == '#pageConsultaIncidencias'){
+        $.mobile.changePage('#pageIndex');
+    }else{
+        navigator.app.backHistory();
+    }
+}
+
 
 // -------- COMUNES -----------------------------------------------------------------------
 
