@@ -70,12 +70,12 @@ function handleBackButton(){
 function abrirPagina(sPag, bBack) {
 
 /* moga
-*/
+
     $("#pageIndex").hide();
     $("#pageNuevaIncidencia").hide();
     $("#pageConsultaIncidencias").hide();
     //Hgs no habria que añadir foto?
-
+ */
 
     $.mobile.changePage('#' + sPag, {
         //transition: "pop",
@@ -93,13 +93,13 @@ function abrirPagina(sPag, bBack) {
         case 'pageNuevaIncidencia' :
             //espero a que esté cargado el div para que se renderice bien el plano ...
             //moga
-            $("#pageNuevaIncidencia").show();
+            //$("#pageNuevaIncidencia").show();
             $.doTimeout(1500, inicioPaginaNuevaIncidencia() );
             break;
 
         case 'pageConsultaIncidencias' :
             /*moga */
-            $("#pageConsultaIncidencias").show();
+            //$("#pageConsultaIncidencias").show();
             inicioPaginaConsultaIncidencias();
             //espero a que esté cargado el div para que se renderice bien el plano ...
             //setTimeout(inicializarPagina,1000);

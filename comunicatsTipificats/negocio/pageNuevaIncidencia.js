@@ -62,7 +62,7 @@ function inicioPaginaNuevaIncidencia(){
     var combo = $('#selectLletraIniCARRER');
     cargaLetrasAbcdario(combo, 'lletra inicial' , nLetra );
     bAbroPagina = false;
-    //$.doTimeout(1000,cierraMapaAbreComentario());
+    $.doTimeout(1000,cierraMapaAbreComentario());
 
     /*$.doTimeout(1000, function() {
         var combo = $('#selectLletraIniCARRER');
@@ -148,7 +148,7 @@ function autoRellenoCalleNum()/**/{
 
 function cierraMapaAbreComentario(){
     $('#collapsibleItem').trigger('expand');
-    $('#collapsibleLocalizacion').trigger('collapse');
+    //$('#collapsibleLocalizacion').trigger('collapse');
 }
 
 // -------- FOTO -------------------------------------------------------------------------
