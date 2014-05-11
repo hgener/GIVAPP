@@ -35,10 +35,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="index.html" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="index.html" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/comunicatsTipificats/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="67" column="38" selection-start="2952" selection-end="2952" vertical-scroll-proportion="0.55979204" vertical-offset="816" max-vertical-offset="8704">
+            <state line="58" column="26" selection-start="2456" selection-end="2456" vertical-scroll-proportion="-37.923077" vertical-offset="0" max-vertical-offset="8704">
               <folding>
                 <element signature="tag#div#2;tag#body#0;tag#html#0" expanded="false" />
               </folding>
@@ -46,17 +46,17 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="pageNuevaIncidencia.js" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="pageNuevaIncidencia.js" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/comunicatsTipificats/negocio/pageNuevaIncidencia.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="454" column="44" selection-start="17356" selection-end="17356" vertical-scroll-proportion="0.0" vertical-offset="4825" max-vertical-offset="12529">
+            <state line="458" column="12" selection-start="17485" selection-end="17485" vertical-scroll-proportion="0.5970149" vertical-offset="4825" max-vertical-offset="12529">
               <folding>
                 <element signature="n#!!block;n#iniciaMapaAlta#0" expanded="false" />
                 <element signature="n#!!block;n#iniciaMapaFoto#0" expanded="false" />
                 <element signature="n#!!block;n#cogerDireccion#0" expanded="false" />
                 <element signature="n#!!block;n#direccionObtenida#0" expanded="false" />
-                <marker date="1399836412843" expanded="false" signature="13986:14022" placeholder="..." />
-                <marker date="1399836412843" expanded="false" signature="14062:14100" placeholder="..." />
+                <marker date="1399836902515" expanded="false" signature="13986:14022" placeholder="..." />
+                <marker date="1399836902515" expanded="false" signature="14062:14100" placeholder="..." />
               </folding>
             </state>
           </provider>
@@ -339,25 +339,25 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/comunicatsTipificats/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="58" column="26" selection-start="2456" selection-end="2456" vertical-scroll-proportion="-37.923077" vertical-offset="0" max-vertical-offset="8704">
+          <folding>
+            <element signature="tag#div#2;tag#body#0;tag#html#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/comunicatsTipificats/negocio/pageNuevaIncidencia.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="454" column="44" selection-start="17356" selection-end="17356" vertical-scroll-proportion="0.0" vertical-offset="4825" max-vertical-offset="12529">
+        <state line="458" column="12" selection-start="17485" selection-end="17485" vertical-scroll-proportion="0.5970149" vertical-offset="4825" max-vertical-offset="12529">
           <folding>
             <element signature="n#!!block;n#iniciaMapaAlta#0" expanded="false" />
             <element signature="n#!!block;n#iniciaMapaFoto#0" expanded="false" />
             <element signature="n#!!block;n#cogerDireccion#0" expanded="false" />
             <element signature="n#!!block;n#direccionObtenida#0" expanded="false" />
-            <marker date="1399836412843" expanded="false" signature="13986:14022" placeholder="..." />
-            <marker date="1399836412843" expanded="false" signature="14062:14100" placeholder="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/comunicatsTipificats/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="67" column="38" selection-start="2952" selection-end="2952" vertical-scroll-proportion="0.55979204" vertical-offset="816" max-vertical-offset="8704">
-          <folding>
-            <element signature="tag#div#2;tag#body#0;tag#html#0" expanded="false" />
+            <marker date="1399836902515" expanded="false" signature="13986:14022" placeholder="..." />
+            <marker date="1399836902515" expanded="false" signature="14062:14100" placeholder="..." />
           </folding>
         </state>
       </provider>
