@@ -448,14 +448,14 @@ function enviarIncidencia() {
 
 try{
     //$("#buttonEnviar").attr("disabled", "disabled");//hgs 05/12/13
-    $("#buttonEnviar").button('disable');
-    $("#buttonEnviar").button('refresh');
-    var ref = enviarComunicat_WS(sParams, true);
+    $("#buttonEnviar").addClass('ui-disabled');
 
-    //$("#buttonEnviar").removeAttr("disabled"); //hgs 05/12/13
-    $("#buttonEnviar").button('enable');
-    $("#buttonEnviar").button('refresh');
-    alert('pase lo que passe activo');
+    // alert('inaactivo');
+    //$("#buttonEnviar").button('disable');
+    // $("#buttonEnviar").button('refresh');
+    var ref = enviarComunicat_WS(sParams, true);
+////alert('reactivo');
+    $("#buttonEnviar").removeClass('ui-disabled');
 } catch(ex){
     mensaje('ERROR (exception) en resultadoEnvio ' + ex.code + '\n' + ex.message , 'error');
     // return null;
