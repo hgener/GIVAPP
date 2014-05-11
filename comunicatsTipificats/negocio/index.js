@@ -17,6 +17,9 @@ window.addEventListener('load', function () {
 
 function deviceReady() {
 
+    /*hgs 080414*/
+    navigator.splashscreen.hide();
+
     document.addEventListener("backbutton", handleBackButton, true); //Hgs 080514
 
     if (phoneGapRun()) {
@@ -67,10 +70,12 @@ function handleBackButton(){
 function abrirPagina(sPag, bBack) {
 
 /* moga
+*/
     $("#pageIndex").hide();
     $("#pageNuevaIncidencia").hide();
     $("#pageConsultaIncidencias").hide();
-*/
+    //Hgs no habria que añadir foto?
+
 
     $.mobile.changePage('#' + sPag, {
         //transition: "pop",
@@ -87,12 +92,14 @@ function abrirPagina(sPag, bBack) {
 
         case 'pageNuevaIncidencia' :
             //espero a que esté cargado el div para que se renderice bien el plano ...
-         /*   moga /$("#pageNuevaIncidencia").show();*/
+            //moga
+            $("#pageNuevaIncidencia").show();
             $.doTimeout(1500, inicioPaginaNuevaIncidencia() );
             break;
 
         case 'pageConsultaIncidencias' :
-            /*moga $("#pageConsultaIncidencias").show();*/
+            /*moga */
+            $("#pageConsultaIncidencias").show();
             inicioPaginaConsultaIncidencias();
             //espero a que esté cargado el div para que se renderice bien el plano ...
             //setTimeout(inicializarPagina,1000);

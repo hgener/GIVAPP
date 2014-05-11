@@ -14,11 +14,12 @@ var dicAyuda = {};
 var dicItem={};
 var nImgTotal = 0;
 //hgs abans 5 Si disminueixo surten les fletxes
-var nImgPorPanel = 5;
+var nImgPorPanel = 10;
 var nPrimeraImgVisible = 1;
 var nNumCalle =0;
 //AZ
 var bPrimera;
+
 
 // -------- INICIALIZAR PÁGINA -----------------------------------------------------------
 function inicioPaginaNuevaIncidencia(){
@@ -45,12 +46,9 @@ function inicioPaginaNuevaIncidencia(){
     //totalImg();  			//la primera vez informa esta var con el total de imagenes ...
     sincroImagenes("");
 
-
     var nLetra = 65;
     var combo = $('#selectLletraIniCARRER');
     cargaLetrasAbcdario(combo, 'lletra inicial' , nLetra );
-
-    //alert('InicioPaginaNuevaIncidencia');
     iniciaMapaAlta(true);
 
     //hgs080514, por si habia algunafoto
@@ -61,19 +59,20 @@ function inicioPaginaNuevaIncidencia(){
 //        !!!!!!!!!!!!!! no consigo obtener el nombre de la calle desde google maps, ya que devuelve 'carrer de tal ... '
 
     //HGS 181213 pongo esto dentro del doTimeout
-    /*var combo = $('#selectLletraIniCARRER');
+    var combo = $('#selectLletraIniCARRER');
     cargaLetrasAbcdario(combo, 'lletra inicial' , nLetra );
     bAbroPagina = false;
-    $.doTimeout(1000,cierraMapaAbreComentario());*/
+    //$.doTimeout(1000,cierraMapaAbreComentario());
 
-    $.doTimeout(1000, function() {
-        //iniciaMapaAlta(true);
-        reposicionaMapa();
+    /*$.doTimeout(1000, function() {
         var combo = $('#selectLletraIniCARRER');
         cargaLetrasAbcdario(combo, 'lletra inicial' , nLetra );
         bAbroPagina=false;
-        cierraMapaAbreComentario();
-    });
+        //haciendo pruebas del movimiento de pantalla
+        //cierraMapaAbreComentario();
+        $('#collapsibleItem').trigger('expand');
+
+    });*/
 }
 
 function cargaDatosCiudadano(){

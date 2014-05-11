@@ -1,28 +1,53 @@
 <?xml version="1.0"?>
 <icoTemas>
 <icoTema>
-    <id>1</id>
-    <img>1333_off.png</img>
-    <desc>Recollida i neteja</desc>
+<id>1</id>
+<img>1470_off.png</img>
+<desc>Ocupacions</desc>
 </icoTema>
 <icoTema>
-    <id>2</id>
-    <img>1349_off.png</img>
-    <desc>Via pública</desc>
+<id>2</id>
+<img>1503_off.png</img>
+<desc>Transport</desc>
 </icoTema>
 <icoTema>
-    <id>3</id>
-    <img>1460_off.png</img>
-    <desc>Parcs i jardins</desc>
+<id>3</id>
+<img>1481_off.png</img>
+<desc>Circulacio</desc>
 </icoTema>
 <icoTema>
-    <id>4</id>
-    <img>1503_off.png</img>
-    <desc>Transports i mobilitat</desc>
+<id>4</id>
+<img>1349_off.png</img>
+<desc>Manteniment Via Pública</desc>
 </icoTema>
 <icoTema>
-    <id>5</id>
-    <img>1058_off.png</img>
-    <desc>Edificis municipals</desc>
+<id>5</id>
+<img>1365_off.png</img>
+<desc>Mobiliari Urbà</desc>
+</icoTema>
+<icoTema>
+<id>6</id>
+<img>1333_off.png</img>
+<desc>Neteja Viària</desc>
+</icoTema>
+<icoTema>
+<id>7</id>
+<img>1398_off.png</img>
+<desc>Recollida de Residus</desc>
+</icoTema>
+<icoTema>
+<id>8</id>
+<img>1191_off.png</img>
+<desc>Parcs i Jardins</desc>
+</icoTema>
+<icoTema>
+<id>9</id>
+<img>1241_off.png</img>
+<desc>Enllumenat Públic</desc>
+</icoTema>
+<icoTema>
+<id>10</id>
+<img>1058_off.png</img>
+<desc>Edificis Municipals</desc>
 </icoTema>
 </icoTemas>
