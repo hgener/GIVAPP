@@ -35,10 +35,10 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="index.html" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="index.html" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/comunicatsTipificats/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="58" column="26" selection-start="2456" selection-end="2456" vertical-scroll-proportion="-37.923077" vertical-offset="0" max-vertical-offset="8704">
+            <state line="67" column="38" selection-start="2952" selection-end="2952" vertical-scroll-proportion="0.60382515" vertical-offset="918" max-vertical-offset="8704">
               <folding>
                 <element signature="tag#div#2;tag#body#0;tag#html#0" expanded="false" />
               </folding>
@@ -46,17 +46,33 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="pageNuevaIncidencia.js" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="pageNuevaIncidencia.js" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/comunicatsTipificats/negocio/pageNuevaIncidencia.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="458" column="12" selection-start="17485" selection-end="17485" vertical-scroll-proportion="0.5970149" vertical-offset="4825" max-vertical-offset="12529">
+            <state line="450" column="0" selection-start="17192" selection-end="17192" vertical-scroll-proportion="0.0" vertical-offset="4876" max-vertical-offset="12546">
               <folding>
                 <element signature="n#!!block;n#iniciaMapaAlta#0" expanded="false" />
                 <element signature="n#!!block;n#iniciaMapaFoto#0" expanded="false" />
                 <element signature="n#!!block;n#cogerDireccion#0" expanded="false" />
                 <element signature="n#!!block;n#direccionObtenida#0" expanded="false" />
-                <marker date="1399836902515" expanded="false" signature="13986:14022" placeholder="..." />
-                <marker date="1399836902515" expanded="false" signature="14062:14100" placeholder="..." />
+                <marker date="1399837255046" expanded="false" signature="13986:14022" placeholder="..." />
+                <marker date="1399837255046" expanded="false" signature="14062:14100" placeholder="..." />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="utilitats.js" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/comunicatsTipificats/negocio/utilitats.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="388" column="43" selection-start="13290" selection-end="13290" vertical-scroll-proportion="0.0" vertical-offset="6466" max-vertical-offset="9520">
+              <folding>
+                <marker date="1398254257840" expanded="false" signature="4848:4884" placeholder="..." />
+                <marker date="1398254257840" expanded="false" signature="4923:4961" placeholder="..." />
+                <marker date="1398254257840" expanded="false" signature="7136:7172" placeholder="..." />
+                <marker date="1398254257840" expanded="false" signature="7211:7249" placeholder="..." />
+                <marker date="1398254257840" expanded="false" signature="11118:11154" placeholder="..." />
+                <marker date="1398254257840" expanded="false" signature="11194:11232" placeholder="..." />
               </folding>
             </state>
           </provider>
@@ -244,6 +260,7 @@
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32866043" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.19496855" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -253,7 +270,6 @@
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
@@ -339,25 +355,39 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/comunicatsTipificats/index.html">
+    <entry file="file://$PROJECT_DIR$/comunicatsTipificats/negocio/utilitats.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="58" column="26" selection-start="2456" selection-end="2456" vertical-scroll-proportion="-37.923077" vertical-offset="0" max-vertical-offset="8704">
+        <state line="388" column="43" selection-start="13290" selection-end="13290" vertical-scroll-proportion="0.0" vertical-offset="6466" max-vertical-offset="9520">
           <folding>
-            <element signature="tag#div#2;tag#body#0;tag#html#0" expanded="false" />
+            <marker date="1398254257840" expanded="false" signature="4848:4884" placeholder="..." />
+            <marker date="1398254257840" expanded="false" signature="4923:4961" placeholder="..." />
+            <marker date="1398254257840" expanded="false" signature="7136:7172" placeholder="..." />
+            <marker date="1398254257840" expanded="false" signature="7211:7249" placeholder="..." />
+            <marker date="1398254257840" expanded="false" signature="11118:11154" placeholder="..." />
+            <marker date="1398254257840" expanded="false" signature="11194:11232" placeholder="..." />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/comunicatsTipificats/negocio/pageNuevaIncidencia.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="458" column="12" selection-start="17485" selection-end="17485" vertical-scroll-proportion="0.5970149" vertical-offset="4825" max-vertical-offset="12529">
+        <state line="450" column="0" selection-start="17192" selection-end="17192" vertical-scroll-proportion="0.0" vertical-offset="4876" max-vertical-offset="12546">
           <folding>
             <element signature="n#!!block;n#iniciaMapaAlta#0" expanded="false" />
             <element signature="n#!!block;n#iniciaMapaFoto#0" expanded="false" />
             <element signature="n#!!block;n#cogerDireccion#0" expanded="false" />
             <element signature="n#!!block;n#direccionObtenida#0" expanded="false" />
-            <marker date="1399836902515" expanded="false" signature="13986:14022" placeholder="..." />
-            <marker date="1399836902515" expanded="false" signature="14062:14100" placeholder="..." />
+            <marker date="1399837255046" expanded="false" signature="13986:14022" placeholder="..." />
+            <marker date="1399837255046" expanded="false" signature="14062:14100" placeholder="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/comunicatsTipificats/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="67" column="38" selection-start="2952" selection-end="2952" vertical-scroll-proportion="0.60382515" vertical-offset="918" max-vertical-offset="8704">
+          <folding>
+            <element signature="tag#div#2;tag#body#0;tag#html#0" expanded="false" />
           </folding>
         </state>
       </provider>

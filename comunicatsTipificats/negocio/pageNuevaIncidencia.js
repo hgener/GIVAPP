@@ -448,14 +448,15 @@ function enviarIncidencia() {
 
 try{
     //$("#buttonEnviar").attr("disabled", "disabled");//hgs 05/12/13
-    $("#buttonEnviar").addClass('ui-disabled');
+
+    estadoControl('buttonEnviar',true);
 
     alert('inaactivo');
     //$("#buttonEnviar").button('disable');
     // $("#buttonEnviar").button('refresh');
     var ref = enviarComunicat_WS(sParams, true);
 alert('reactivo');
-    $("#buttonEnviar").removeClass('ui-disabled');
+    estadoControl('buttonEnviar',true);
 } catch(ex){
     mensaje('ERROR (exception) en resultadoEnvio ' + ex.code + '\n' + ex.message , 'error');
     // return null;
