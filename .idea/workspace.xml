@@ -29,7 +29,7 @@
       <file leaf-file-name="index.js" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/comunicatsTipificats/negocio/index.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="90" column="8" selection-start="2534" selection-end="2534" vertical-scroll-proportion="0.0" vertical-offset="1390" max-vertical-offset="2669">
+            <state line="85" column="16" selection-start="2418" selection-end="2418" vertical-scroll-proportion="0.0" vertical-offset="1390" max-vertical-offset="2669">
               <folding />
             </state>
           </provider>
@@ -38,7 +38,7 @@
       <file leaf-file-name="index.html" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/comunicatsTipificats/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="67" column="38" selection-start="2952" selection-end="2952" vertical-scroll-proportion="0.55979204" vertical-offset="816" max-vertical-offset="8704">
+            <state line="64" column="73" selection-start="2686" selection-end="2686" vertical-scroll-proportion="0.4714038" vertical-offset="816" max-vertical-offset="8704">
               <folding>
                 <element signature="tag#div#2;tag#body#0;tag#html#0" expanded="false" />
               </folding>
@@ -49,14 +49,14 @@
       <file leaf-file-name="pageNuevaIncidencia.js" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/comunicatsTipificats/negocio/pageNuevaIncidencia.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="452" column="48" selection-start="17320" selection-end="17320" vertical-scroll-proportion="0.0" vertical-offset="4621" max-vertical-offset="12478">
+            <state line="461" column="1" selection-start="17639" selection-end="17639" vertical-scroll-proportion="0.0" vertical-offset="4876" max-vertical-offset="12529">
               <folding>
                 <element signature="n#!!block;n#iniciaMapaAlta#0" expanded="false" />
                 <element signature="n#!!block;n#iniciaMapaFoto#0" expanded="false" />
                 <element signature="n#!!block;n#cogerDireccion#0" expanded="false" />
                 <element signature="n#!!block;n#direccionObtenida#0" expanded="false" />
-                <marker date="1399834653093" expanded="false" signature="13986:14022" placeholder="..." />
-                <marker date="1399834653093" expanded="false" signature="14062:14100" placeholder="..." />
+                <marker date="1399835124656" expanded="false" signature="13986:14022" placeholder="..." />
+                <marker date="1399835124656" expanded="false" signature="14062:14100" placeholder="..." />
               </folding>
             </state>
           </provider>
@@ -76,8 +76,8 @@
     <option name="changedFiles">
       <list>
         <option value="$PROJECT_DIR$/comunicatsTipificats/config.xml" />
-        <option value="$PROJECT_DIR$/comunicatsTipificats/negocio/index.js" />
         <option value="$PROJECT_DIR$/comunicatsTipificats/negocio/pageNuevaIncidencia.js" />
+        <option value="$PROJECT_DIR$/comunicatsTipificats/negocio/index.js" />
         <option value="$PROJECT_DIR$/comunicatsTipificats/index.html" />
       </list>
     </option>
@@ -334,28 +334,28 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/comunicatsTipificats/negocio/index.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="90" column="8" selection-start="2534" selection-end="2534" vertical-scroll-proportion="0.0" vertical-offset="1390" max-vertical-offset="2669">
+        <state line="85" column="16" selection-start="2418" selection-end="2418" vertical-scroll-proportion="0.0" vertical-offset="1390" max-vertical-offset="2669">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/comunicatsTipificats/negocio/pageNuevaIncidencia.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="452" column="48" selection-start="17320" selection-end="17320" vertical-scroll-proportion="0.0" vertical-offset="4621" max-vertical-offset="12478">
+        <state line="461" column="1" selection-start="17639" selection-end="17639" vertical-scroll-proportion="0.0" vertical-offset="4876" max-vertical-offset="12529">
           <folding>
             <element signature="n#!!block;n#iniciaMapaAlta#0" expanded="false" />
             <element signature="n#!!block;n#iniciaMapaFoto#0" expanded="false" />
             <element signature="n#!!block;n#cogerDireccion#0" expanded="false" />
             <element signature="n#!!block;n#direccionObtenida#0" expanded="false" />
-            <marker date="1399834653093" expanded="false" signature="13986:14022" placeholder="..." />
-            <marker date="1399834653093" expanded="false" signature="14062:14100" placeholder="..." />
+            <marker date="1399835124656" expanded="false" signature="13986:14022" placeholder="..." />
+            <marker date="1399835124656" expanded="false" signature="14062:14100" placeholder="..." />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/comunicatsTipificats/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="67" column="38" selection-start="2952" selection-end="2952" vertical-scroll-proportion="0.55979204" vertical-offset="816" max-vertical-offset="8704">
+        <state line="64" column="73" selection-start="2686" selection-end="2686" vertical-scroll-proportion="0.4714038" vertical-offset="816" max-vertical-offset="8704">
           <folding>
             <element signature="tag#div#2;tag#body#0;tag#html#0" expanded="false" />
           </folding>

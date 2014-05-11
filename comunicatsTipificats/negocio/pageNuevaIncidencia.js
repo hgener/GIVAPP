@@ -446,7 +446,7 @@ function enviarIncidencia() {
 */
     var  sParams = {sId:$('#IdItem').val()+'',sDescItem:$('#labelItem').text()+'' ,sNom:$('#inputNOM').val() + '',sCognom1:$('#inputCOGNOM1').val() + '',sCognom2:$('#inputCOGNOM2').val() + '',sDni:$('#inputDNI').val() + '',sEmail:$('#inputEMAIL').val() + '',sTelefon:$('#inputTELEFON').val() + '',sObs:sComentario + '',sCoord:sCoords + '',sCodCarrer:$('#selectCARRER').val() + '',sCarrer:$('#selectCARRER').find(':selected').text() + '',sNumPortal:$('#inputNUM').val() + '',sFoto: sFoto};
 
-
+try{
     //$("#buttonEnviar").attr("disabled", "disabled");//hgs 05/12/13
     $("#buttonEnviar").button('disable');
     $("#buttonEnviar").button('refresh');
@@ -456,7 +456,10 @@ function enviarIncidencia() {
     $("#buttonEnviar").button('enable');
     $("#buttonEnviar").button('refresh');
     alert('pase lo que passe activo');
-
+} catch(ex){
+    mensaje('ERROR (exception) en resultadoEnvio ' + ex.code + '\n' + ex.message , 'error');
+    // return null;
+}
 }
 
 function enviarComunicat_WS(sParams,bNuevoComunicat){

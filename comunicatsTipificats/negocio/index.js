@@ -85,10 +85,10 @@ function abrirPagina(sPag, bBack) {
 
     switch(sPag)
     {
-          case 'pageIndex' :
-            $("#pageIndex").show();
+        //   case 'pageIndex' :
+        //    $("#pageIndex").show();
         //    $("#opcions").show();
-            break;
+        //     break;
 
         case 'pageNuevaIncidencia' :
             //espero a que esté cargado el div para que se renderice bien el plano ...
