@@ -428,7 +428,7 @@ function enviarIncidencia() {
     //Controlar datos obligatorios -- afegit sId, treiem comentari sComentario,
     var sMsg =  datosObligatorios(sId, sDireccionAlta,$('#inputDNI').val(), $('#inputEMAIL').val(),$('#inputTELEFON').val());
     if(sMsg != ""){
-        $("buttonEnviar").removeAttr("disabled");//hgs 05/12/13
+        //$("buttonEnviar").removeAttr("disabled");//hgs 05/12/13
         mensaje(sMsg,'Atenció');
         return;
     }
@@ -444,24 +444,18 @@ function enviarIncidencia() {
     sParams += "&sDir=" + sDireccionAlta + '';
     sParams += "&sFoto=" + sFoto;  //encodeURIComponent(imagenDePrueba()) + '';
 */
-
-    //hgs ASQUITO 2
-    //alert('Params que le paso coord: ' + sCoords + ' codicar ' + $('#selectCARRER').val());
-    //alert('Nom persona' + $('#inputCOGNOM1').val() + ' , ' +$('#inputCOGNOM2').val());
     var  sParams = {sId:$('#IdItem').val()+'',sDescItem:$('#labelItem').text()+'' ,sNom:$('#inputNOM').val() + '',sCognom1:$('#inputCOGNOM1').val() + '',sCognom2:$('#inputCOGNOM2').val() + '',sDni:$('#inputDNI').val() + '',sEmail:$('#inputEMAIL').val() + '',sTelefon:$('#inputTELEFON').val() + '',sObs:sComentario + '',sCoord:sCoords + '',sCodCarrer:$('#selectCARRER').val() + '',sCarrer:$('#selectCARRER').find(':selected').text() + '',sNumPortal:$('#inputNUM').val() + '',sFoto: sFoto};
 
-    alert('inactivo');
+
     //$("#buttonEnviar").attr("disabled", "disabled");//hgs 05/12/13
     $("#buttonEnviar").button('disable');
-
     $("#buttonEnviar").button('refresh');
     var ref = enviarComunicat_WS(sParams, true);
-     alert('pase lo que passe activo');
+
     //$("#buttonEnviar").removeAttr("disabled"); //hgs 05/12/13
     $("#buttonEnviar").button('enable');
     $("#buttonEnviar").button('refresh');
-
-
+    alert('pase lo que passe activo');
 
 }
 
@@ -470,8 +464,6 @@ function enviarComunicat_WS(sParams,bNuevoComunicat){
     var llamaWS = "http://80.39.72.44:8000/wsAPPGIV/wsIncidentNotifierGIV.asmx/IncidenciaTipus";
     //vila
     //var llamaWS = "http://www.vilafranca.cat/wsAPPGIV/wsIncidentNotifierGIV.asmx/IncidenciaTipus";
-
-    //alert ('sParams en enviarcomunicat ' + sParams.sId + ','+ sParams.sDescItem +','+sParams.sCoord + ',' + sParams.sObs);
     //alert('llamaWS ' + llamaWS + 'bNuevoComunicat ' + bNuevoComunicat);
     //alert('sParams en enviarcomunicat ' + sParams.sId );
     try
@@ -482,9 +474,13 @@ function enviarComunicat_WS(sParams,bNuevoComunicat){
         var sTitulo = "";
         var sReferen = "";
 
+
+
+
         $.post(llamaWS, sParams).done(function(datos) {
             try
             {
+
                 if(datos == null)  //==> ha habido error
                 {
                     mensaje("No hi ha confirmació de l'enviament de la comunicació " ,'error');
@@ -546,8 +542,9 @@ function enviarComunicat_WS(sParams,bNuevoComunicat){
             }
             catch(ex){
                 mensaje('ERROR (exception) en resultadoEnvio : \n' + ex.code + '\n' + ex.message , 'error');
-                return null;
+                // return null;
             }
+
         }).fail(function() {
                 if (bNuevoComunicat){
                     var nIdCom = guardaIncidencia("-","PENDENT_ENVIAMENT");
@@ -563,6 +560,7 @@ function enviarComunicat_WS(sParams,bNuevoComunicat){
                 mensaje(sMensaje, sTitulo);
                 abrirPagina('pageIndex', false);
             });
+
     }
     catch(e)
     {

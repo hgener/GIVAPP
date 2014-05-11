@@ -85,9 +85,9 @@ function abrirPagina(sPag, bBack) {
 
     switch(sPag)
     {
-        case 'pageIndex' :
+          case 'pageIndex' :
             $("#pageIndex").show();
-            $("#opcions").show();
+        //    $("#opcions").show();
             break;
 
         case 'pageNuevaIncidencia' :
