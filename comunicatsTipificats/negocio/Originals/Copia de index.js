@@ -6,13 +6,6 @@ var aGlobalCarrers = null;
 var aCarrers = null;
 var aConfig = null;
 
-//hgs per nou flux de treball
-var smensaje;
-var stitulo;
-var controlForm;
-var boolControl;
-
-
 // -------- Al INICIAR -----------------------------------------------------------------------
 window.addEventListener('load', function () {
     if (phoneGapRun()) {
@@ -23,8 +16,6 @@ window.addEventListener('load', function () {
 }, false);
 
 function deviceReady() {
-
-
 
     /*hgs 080414*/
     navigator.splashscreen.hide();
@@ -43,27 +34,16 @@ function deviceReady() {
     //Hay localstorage ?
     if( ! $.jStorage.storageAvailable() )
     {
-        estadoBoton('buttonP1', false);
-        estadoBoton('buttonP2', false);
-        estadoBoton('buttonP3', false);
-        estadoBoton('buttonP4', false);
-        estadoBoton('buttonP5', false);
-        estadoBoton('buttonP6', false);
-
+        estadoBoton('buttonALTA', false);
+        estadoBoton('buttonCONSULTA', false);
         $('#labelInfo').text($('#labelInfo').text() + '\nAtenció : localStorage no soportat');
         return;
     }
     else
     {
         try{
-            cargaConfigEnArray();
-            //hgs Nov14
-            //obtenir i desar telefon
-            //engegar GPS
-            //obtenir posicio
-            //enviarlesPendents
-            //salta a identificació
-        }
+                cargaConfigEnArray();
+            }
             catch(e){ mensaje('exception carregant llista de carrers : ' + e.message,'error'); }
         }
     navigator.splashscreen.hide();
@@ -105,53 +85,19 @@ function abrirPagina(sPag, bBack) {
 
     switch(sPag)
     {
-        case 'pagePantalla1' :
-            $.doTimeout(1500, inicioPagePantalla1() );
-            break;
-
-        case 'pagePantalla2' :
+        case 'pageNuevaIncidencia' :
             $.doTimeout(1500, inicioPaginaNuevaIncidencia() );
             break;
 
-        case 'pagePantalla3' :
-            $.doTimeout(1500, inicioPagePantalla3() );
-            break;
-
-        case 'pagePantalla4' :
-            $.doTimeout(1500, inicioPaginaNuevaIncidencia() );
-            break;
-
-        case 'pagePantalla5' :
+        case 'pageConsultaIncidencias' :
             inicioPaginaConsultaIncidencias();
             $.doTimeout(1000, mostrarEnPlano() );
-            break;
-
-        case 'pagePantalla6' :
-            $.doTimeout(1500, inicioPaginaNuevaIncidencia() );
             break;
 
         case 'pageZoomFoto' :
             var imagen = document.getElementById('imgZoomFoto');
             imagen.style.display = 'block';
             imagen.src = "data:image/jpeg;base64," + sFoto;
-            break;
-    }
-
-}
-
-
-function abrirPaginaEnvio(sPag, bBack,smensaje,stitulo, controlForm, boolControl) {
-
-    $.mobile.changePage('#' + sPag, {
-        transition: "none",
-        reverse: true
-        ,changeHash: bBack
-    });
-
-    switch(sPag)
-    {
-        case 'pagePantalla6' :
-            $.doTimeout(1500, inicioPaginaEnvio(smensaje,stitulo, controlForm, boolControl) );
             break;
     }
 
